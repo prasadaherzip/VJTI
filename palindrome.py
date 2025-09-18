@@ -10,4 +10,4 @@ while m>0:
 if res==n:
     print("is a palindrome")
 else:
-    print("not a palindrome")
+    print("not a palindrome"
