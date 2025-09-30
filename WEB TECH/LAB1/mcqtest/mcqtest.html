@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mcqtest.css">
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h1>MCQ TEST</h1>
+        <form id="" quiz-form>
+            <div class="question-block">
+                <p>1. What does HTML stand for?</p>
+                <label><input type="radio" name="q1" value="a"> Hyper Trainer Marking Language</label><br>
+                <label><input type="radio" name="q1" value="b"> HyperText Markup Language</label><br>
+                <label><input type="radio" name="q1" value="c"> High Level Text Machine Language</label><br>
+            </div>
+
+            <div class="question-block">
+                <p>2. What do you like more</p>
+                <label><input type="radio" name="q2" value="a"> Cat </label><br>
+                <label><input type="radio" name="q2" value="b"> Dog </label><br>
+                <label><input type="radio" name="q2" value="c"> Sparrow </label><br>
+            </div>
+
+            <div class="question-block">
+                <p>3. 5+5? </p>
+                <label><input type="radio" name="q3" value="a"> 10 </label><br>
+                <label><input type="radio" name="q3" value="b"> 4 </label><br>
+                <label><input type="radio" name="q3" value="c"> -15 </label><br>
+            </div>
+
+            <button type="button" onclick="checkAnswers()"> Submit Test</button>
+        </form>
+        <p id="result()"></p>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
