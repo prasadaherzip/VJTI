@@ -1,2 +1,0 @@
-characters = input("enter word:  ")
-
