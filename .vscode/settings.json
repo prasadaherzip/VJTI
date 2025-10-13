@@ -4,5 +4,6 @@
     },
     "python-envs.defaultEnvManager": "ms-python.python:system",
     "python-envs.pythonProjects": [],
-    "liveServer.settings.port": 5504
+    "liveServer.settings.port": 5504,
+    "remote.autoForwardPortsFallback": 0
 }

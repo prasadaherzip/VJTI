@@ -1,0 +1,2 @@
+characters = input("enter word:  ")
+
