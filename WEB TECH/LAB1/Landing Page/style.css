@@ -1,0 +1,166 @@
+/* Basic Reset and Variables */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #f8f9fa; /* Light Gray */
+    --text-color: #333;
+    --dark-color: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header and Navigation */
+header {
+    background: var(--dark-color);
+    color: white;
+    padding: 1rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px 5%;
+    background: var(--secondary-color);
+    min-height: 80vh; /* Takes up most of the viewport height */
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Optional: adds a subtle round edge */
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+/* Features Section */
+.features {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--dark-color);
+}
+
+.features ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.features ul li {
+    font-size: 1.1rem;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-basis: 20%; /* Control the width of feature boxes */
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* Media Query for Responsiveness (Optional but recommended) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        text-align: center;
+    }
+    .hero-content {
+        margin-bottom: 30px;
+    }
+    .features ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .features ul li {
+        flex-basis: 100%;
+    }
+}
