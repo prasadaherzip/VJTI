@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "iostream": "cpp"
-    },
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python-envs.pythonProjects": [],
-    "liveServer.settings.port": 5505,
-    "remote.autoForwardPortsFallback": 0
-}
