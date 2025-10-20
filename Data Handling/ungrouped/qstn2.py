@@ -3,16 +3,16 @@ f=[15,26,76,118,8,18,93,35,48,56,21,19,33,29,30]
 list = sorted(f)
 print(list)
 sum_list=sum(list)
-len_list=len(list)
+n=len(list)
 
-mean = sum_list/len_list
+mean = sum_list/n
 
 a_list=[]
 b_list=[]
 c_list=[]
 d_list=[]
 
-print("Mean = ",sum_list,"/",len_list,"=",mean)
+print("Mean = ",sum_list,"/",n,"=",mean)
 ##### 1 #####
 print("[x-mean]")
 for i in list:
@@ -55,20 +55,36 @@ print("---------------")
 
 #other calculations
 
-v = sumb/(len_list-1)
+#variantion
+v = sumb/(n-1)
 print("Sample Variance =",v)
 
+#std dev
 sd = math.sqrt(v)
 print("Standard Deviation is",sd)
 
+#skewness
 print("SD^3 =",pow(sd,3))
 print("SD^4 =",pow(sd,4))
-sk=(sumc/((len_list-1)*pow(sd,3)))
+sk=(sumc/((n-1)*pow(sd,3)))
 print("Skewness =",sk)
 
-k=(sumd/((len_list-1)*pow(sd,4)))
+#kurtosis
+k=(sumd/((n-1)*pow(sd,4)))
 print("Kurtosis = ",k)
 
+#coefficient of variation
 coe=(sd/mean)*100
 print("The Coefficient of Variation = ",coe)
 
+#mean deviation
+abs_list=[]    #absolute value list
+for i in a_list:
+    apnd=abs(i)
+    abs_list.append(apnd)
+print("")
+print("Absolute Values for list (x-mean)")
+for i in abs_list:
+    print(i)
+md = sum(abs_list)/n
+print("Mean Deviation is ",sum(abs_list),"/",n,"=",md)
