@@ -119,7 +119,7 @@ print("Kurtosis = ",k)
 
 #coefficient of variance
 coe=(sd/mean)*100
-print("The Coefficient of Variation = ",coe)
+print("The Coefficient of Variation is",sd,"/",mean,"=",coe)
 
 #mean deviation
 abs_list=[]    #absolute value list
