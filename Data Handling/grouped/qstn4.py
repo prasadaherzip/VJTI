@@ -119,7 +119,12 @@ print("Kurtosis = ",k)
 
 #coefficient of variance
 coe=(sd/mean)*100
+<<<<<<< HEAD
 print("The Coefficient of Variation is",sd,"/",mean,"=",coe)
+=======
+print("The Coefficient of Variation = "git add qstn4.py
+git commit -m "Save local changes before pulling",coe)
+>>>>>>> 007d49a (Save local changes before pulling)
 
 #mean deviation
 abs_list=[]    #absolute value list
