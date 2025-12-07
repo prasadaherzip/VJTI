@@ -6,7 +6,7 @@ def fcfs(req,head):
 
     for track in order:
         total+=abs(track-curr)
-        curr=head
+        curr=track
     return order,total
 
 if __name__=="__main__":
@@ -14,5 +14,6 @@ if __name__=="__main__":
     head = 50
 
     order,total= fcfs(req,head)
-    print(order,total)
+    print(order)
+    print(total)
 
