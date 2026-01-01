@@ -1,19 +1,40 @@
-def fcfs(req,head):
-    order = req
+req = [95,180,34,119,11,123,62,64]
+head = 50
+min=0
+max=199
+direction=0
 
-    total = 0
-    curr = head
+reqs=sorted(req)
+seek_order=[]
 
-    for track in order:
-        total+=abs(track-curr)
-        curr=track
-    return order,total
+print("Request order is :", req)
+print("Sorted requests are: ", reqs)
+print("Read currently at: ", head)
+direction= int(input("Enter direction of service (1=right, -1=left): \n"))
 
-if __name__=="__main__":
-    req = [95,180,34,119,11,123,62,64]
-    head = 50
+left= [r for r in reqs if r < head]
+right=[ r for r in reqs if r >= head]
 
-    order,total= fcfs(req,head)
-    print(order)
-    print(total)
 
+if direction == 1:
+    seek_order.extend(right)
+    seek_order.extend(left[::-1])
+elif direction == -1:
+    seek_order.extend(left[::-1])
+    seek_order.extend(right)
+else:
+    raise ValueError("diection must be -1 or 1")
+
+total = 0
+curr = head
+
+for i in seek_order:
+    total += abs(i - curr)
+    curr = i
+
+if direction == 1:
+    print("LOOK seek order when right servicing", seek_order)
+    print("Total Head Movement", total)
+elif direction == -1:
+    print("LOOK seek order when left servicing", seek_order)
+    print("Total Head Movement:", total)

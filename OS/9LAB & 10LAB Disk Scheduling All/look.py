@@ -1,43 +1,40 @@
-def look( req, head, direc=1, min=0, max=199):  #no end as we only service till the extremes of requests
-    reqs = sorted(req)
+req = [95,180,34,119,11,123,62,64]
+head = 50
+min=0
+max=199
+direction=0
 
-    left = [r for r in reqs if r < head]
-    right =[r for r in reqs if r >= head]
+reqs=sorted(req)
+seek_order=[]
 
-    seek_order = []
+print("Request order is :", req)
+print("Sorted requests are: ", reqs)
+print("Read currently at: ", head)
+direction= int(input("Enter direction of service (1=right, -1=left): \n"))
 
-    if direc == 1:
-        seek_order.extend(right)
-        seek_order.extend(left[::-1])   #reverse and append list to traverse back to the req end while also servicing
+left= [r for r in reqs if r < head]
+right=[ r for r in reqs if r >= head]
 
-    elif direc == -1:
-        seek_order.extend(left[::-1])
-        seek_order.extend(right)
-    
-    else:
-        raise ValueError("DIRECTION MUST BE 1 OR -1")
-    
-    #compute seek distance
-    total_seek = 0
-    curr = head
-    for track in seek_order:
-        total_seek += abs(track-curr)
-        curr = track
 
-    return seek_order, total_seek
+if direction == 1:
+    seek_order.extend(right)
+    seek_order.extend(left[::-1])
+elif direction == -1:
+    seek_order.extend(left[::-1])
+    seek_order.extend(right)
+else:
+    raise ValueError("diection must be -1 or 1")
 
-if __name__ == "__main__":
-    req = [95,180,34,119,11,123,62,64]
-    head = 50
+total = 0
+curr = head
 
-    order, total =  look(req, head, direc = 1, min=0, max=199)
-    print("LOOK (to right, and go to right request end)")
-    print("Order:", order)
-    print("Total Seek:", total)
-    print()
+for i in seek_order:
+    total += abs(i - curr)
+    curr = i
 
-    order, total =  look(req, head, direc = -1, min=0, max=199)
-    print("LOOK (to left, and go to left request end)")
-    print("Order:", order)
-    print("Total Seek:", total)
-    print()
+if direction == 1:
+    print("LOOK seek order when right servicing", seek_order)
+    print("Total Head Movement", total)
+elif direction == -1:
+    print("LOOK seek order when left servicing", seek_order)
+    print("Total Head Movement:", total)
