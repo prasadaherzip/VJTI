@@ -1,26 +1,27 @@
-def sstf(req, head):
-    pending = req[:]        # copy so original is not changed
-    order = []
-    total = 0
-    curr = head
+req = [95,180,34,119,11,123,62,64]
+head = 50
 
-    while pending:
-        # find the request closest to curr
-        closest = min(pending, key=lambda r: abs(r - curr))
+reqs = req[:]          # copy request list
+seek_order = []
 
-        # service it: add seek, record order, move head, remove from pending
-        total += abs(closest - curr)
-        order.append(closest)
-        curr = closest
-        pending.remove(closest)
+print("Request order is :", req)
+print("Read currently at : \n", head)
 
-    return order, total
+total = 0
+curr = head
 
+while reqs:
+    closest = reqs[0]
 
-if __name__ == "__main__":
-    req = [95,180,34,119,11,123,62,64]
-    head = 50
+    for track in reqs:
+        if abs(track-curr) < abs(closest-curr):
+            closest = track             # all of this gives 1st closest request
 
-    order, total = sstf(req, head)
-    print("Order:", order)
-    print("Total seek:", total)
+    seek_order.append(closest)          #append this closest and then remove it
+    total += abs(closest-curr)
+    curr = closest
+    reqs.remove(closest)            #perform the comparison for next closest
+
+print("------------------------")
+print("SSTF seek order :", seek_order)
+print("Total Head Movement :", total)
