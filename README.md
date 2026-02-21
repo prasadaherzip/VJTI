@@ -1,2 +1,0 @@
-# VJTI
-College Practicals
