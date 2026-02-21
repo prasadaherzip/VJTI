@@ -30,7 +30,7 @@ def array_insert(arr, pos, val, comps, shifts):
     return arr, comps, shifts
 
 
- array_search(arr, key, comps):
+def array_search(arr, key, comps):
     for i in range(len(arr)):
         comps += 1
         if arr[i] == key:
