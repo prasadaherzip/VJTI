@@ -29,7 +29,7 @@ def test_case(arr):
     start = time.perf_counter()
     comparisons, swaps = insertion_sort(arr_copy)
     end = time.perf_counter()
-
+∑w
     return (end - start), comparisons, swaps
 
 
